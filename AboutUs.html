@@ -3,19 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Soft Tissue Reconstruction Demo</title>
+  <title>About Us – Surgic Sense</title>
 
-  <!-- Styles & Scripts -->
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 
-  <!-- Ionicons -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
 
-  <!-- Top header -->
   <header class="top-header">
     <div class="header-left">
       <img src="Images/download.png" alt="Logo">
@@ -23,7 +20,6 @@
     </div>
   </header>
 
-  <!-- Navigation -->
   <nav class="compact-nav">
     <ul>
       <li><a href="index.html"><ion-icon name="home-outline"></ion-icon><span>Home</span></a></li>
@@ -32,10 +28,10 @@
       <li><a href="demo.html"><ion-icon name="play-circle-outline"></ion-icon><span>Demo</span></a></li>
       <li><a href="https://healthview.uni-mainz.de/segmentation-3d-prediction/" target="_blank"><ion-icon name="sparkles-outline"></ion-icon><span>3D Prediction</span></a></li>
       <li><a href="ContactUS.html"><ion-icon name="mail-outline"></ion-icon><span>Contact</span></a></li>
+      <li><a href="login.html"><ion-icon name="medkit-outline"></ion-icon><span>Log in for Surgeons</span></a></li>
     </ul>
   </nav>
 
-  <!-- Active nav highlighting -->
   <script>
     const currentPage = location.pathname.split("/").pop();
     document.querySelectorAll('.compact-nav a').forEach(link => {
@@ -45,47 +41,35 @@
     });
   </script>
 
-  <!-- Page-specific content goes here -->
+  <main>
 
-</body>
-</html>
+    <section>
+      <h3>Who we are:</h3>
+      <div>
+        <img src="Images/DMgroup.png" alt="DMgroup" class="float-right">
+        <p>
+          We the data mining group focus on discovering patterns and useful information in large datasets.
+          We specialize in sorting data into categories, identifying relationships, and grouping similar data points.
+          We also have expertise in visualizing data and applying these techniques to solve real-world problems and research questions
+        </p>
+      </div>
+    </section>
 
+    <section>
+      <h3>KHARKIV INTERNATIONAL MEDICAL UNIVERSITY - KhIMU</h3>
+      <div>
+        <img src="Images/logo2.png" alt="wound" class="KhIMU">
+        <p>
+          For this project we teamed up with KhIMU, a leading medical university known for training highly skilled healthcare professionals.
+          KhIMU focuses on both education and research, ensuring students gain hands-on experience through internships and clinical practice. <br><br>
+          Their involvement in this project strengthens the integration of AI in reconstructive surgery and medical training, particularly for wartime injuries.
+          By leveraging AI-driven tools like 3D scanning, thermal imaging, and ultrasound, KhIMU aims to improve wound care and surgical outcomes.
+          Their commitment to innovation helps shape the future of medical education and enhances healthcare practices in critical conditions
+        </p>
+      </div>
+    </section>
 
-    <!-- Main content of the page -->
-    <main>
-        <!-- Section describing the team -->
-        <section>
-            <h3>Who we are:</h3> 
-            <div> 
-                <!-- Team image -->
-                <img src="Images/DMgroup.png" alt="DMgroup" class="float-right">
+  </main>
 
-                <!-- Team description -->
-                <p>
-                    We the data mining group focus on discovering patterns and useful information in large datasets. 
-                    We specialize in sorting data into categories, identifying relationships, and grouping similar data points. 
-                    We also have expertise in visualizing data and applying these techniques to solve real-world problems and research questions
-                </p> 
-            </div>
-        </section>
-
-        <!-- Section describing the collaboration with KhIMU -->
-        <section>
-            <h3>KHARKIV INTERNATIONAL MEDICAL UNIVERSITY - KhIMU</h3>
-            <div>
-                <!-- KhIMU logo -->
-                <img src="Images/logo2.png" alt="wound" class="KhIMU">
-
-                <!-- Description of collaboration -->
-                <p>
-                    For this project we teamed up with KhIMU, a leading medical university known for training highly skilled healthcare professionals. 
-                    KhIMU focuses on both education and research, ensuring students gain hands-on experience through internships and clinical practice. <br><br>
-                    Their involvement in this project strengthens the integration of AI in reconstructive surgery and medical training, particularly for wartime injuries. 
-                    By leveraging AI-driven tools like 3D scanning, thermal imaging, and ultrasound, KhIMU aims to improve wound care and surgical outcomes. 
-                    Their commitment to innovation helps shape the future of medical education and enhances healthcare practices in critical conditions
-                </p>
-            </div>
-        </section>
-    </main>
 </body>
 </html>

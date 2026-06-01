@@ -89,6 +89,11 @@ document.addEventListener("DOMContentLoaded", () => {
       resultBox.appendChild(img);
 
       localStorage.setItem("lastResult", `${API_BASE}${data.texture_url}`);
+      localStorage.setItem("currentCase", JSON.stringify({
+        modelName: model,
+        resultUrl: `${API_BASE}${data.texture_url}`,
+        assessment: null
+      }));
     } catch (err) {
       alert(err.message);
     } finally {

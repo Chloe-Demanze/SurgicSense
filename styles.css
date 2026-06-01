@@ -793,27 +793,62 @@ textarea:valid ~ label {
 
 /* PRINT MODE */
 @media print {
-  body {
-    margin: 0;
-    background: white;
+  .menu-panel,
+  .top-header,
+  .simulator-body::before,
+  #printBtn,
+  #saveBtn,
+  #logoutBtn {
+    display: none !important;
   }
 
-  body * {
-    visibility: hidden;
+  body,
+  .simulator-body {
+    background: white !important;
+    background-image: none !important;
+  }
+
+  .simulator-wrapper,
+  .simulator-container {
+    display: block !important;
+    background: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .display-panel {
+    width: 100% !important;
+    padding: 20px !important;
+    background: white !important;
+    color: black !important;
+    overflow: visible !important;
+    height: auto !important;
+    display: block !important;
   }
 
   #printImage {
-    visibility: visible;
+    max-width: 100%;
+    max-height: 50vh;
+    display: block;
+    margin: 0 auto 20px auto;
+  }
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  #assessmentSection {
+    margin-top: 20px;
+    color: black !important;
+  }
 
-    max-width: 95vw;
-    max-height: 95vh;
+  #assessmentTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
 
-    object-fit: contain;
+  #assessmentTable td {
+    padding: 6px 10px;
+    border: 1px solid #999;
+    color: black !important;
   }
 }
 /* ===== SURGERY SIMULATOR DESIGN ===== */

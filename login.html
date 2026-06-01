@@ -42,16 +42,14 @@
             const pass = document.getElementById("password").value;
             const errorMsg = document.getElementById("error-message");
 
-            // Fake konto
-            const correctUser = "doctor";
-            const correctPass = "1234";
+            const saved = JSON.parse(localStorage.getItem("userProfile") || "null");
+            const correctUser = saved?.username || "doctor";
+            const correctPass = saved?.password || "1234";
 
             if (user === correctUser && pass === correctPass) {
-                // Login succeeded
-                errorMsg.textContent = ""; 
-                window.location.href = "surgeons.html";  // redirect to menu page
+                errorMsg.textContent = "";
+                window.location.href = "surgeons.html";
             } else {
-                // Wrong login
                 errorMsg.textContent = "Incorrect username or password.";
             }
         }

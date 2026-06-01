@@ -587,7 +587,7 @@ class WoundImage:
         Check if the image path is a valid folder architecture and file format.
         """
         # Regex for valid path ending in .png/.jpeg/.jpg
-        pattern = r"^(?:[A-Za-z]:\\|/)?(?:[\\w\\s.-]+[/\\])*[\\w\\s.-]+\\.(?:png|jpe?g)$"
+        pattern = r"^(?:[A-Za-z]:[/\\]|/)?(?:[\w\s.-]+[/\\])*[\w\s.-]+\.(?:png|jpe?g)$"
         match = re.match(pattern, image_path, re.IGNORECASE)
         if not match:
             raise ValueError(

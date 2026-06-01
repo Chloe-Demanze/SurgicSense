@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Print Scan</title>
+    <title>Print Report – Surgic Sense</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="segment.css" />
@@ -22,19 +22,17 @@
         <div class="menu-panel">
           <a href="upload-scan.html" class="menu-btn">Upload Scan</a>
           <a href="segment.html" class="menu-btn">Segment</a>
-          <a href="edit-profile.html" class="menu-btn">Edit Profile</a>
           <a href="view.html" class="menu-btn">View</a>
-          <a href="print.html" class="menu-btn active">Print</a>
           <a href="assess-wound.html" class="menu-btn">Assess Wound</a>
+          <a href="print.html" class="menu-btn active">Print</a>
+          <a href="edit-profile.html" class="menu-btn">Edit Profile</a>
           <a href="#" id="saveBtn" class="menu-btn">Save</a>
-          <a href="index.html" id="logoutBtn" class="menu-btn logout"
-            >Log Out</a
-          >
+          <a href="index.html" id="logoutBtn" class="menu-btn logout">Log Out</a>
         </div>
 
         <!-- RIGHT PANEL -->
         <div class="display-panel">
-          <h2 class="page-title">Print</h2>
+          <h2 class="page-title">Print Report</h2>
 
           <!-- PREVIEW CARD -->
           <div class="print-card">
@@ -42,8 +40,14 @@
             <p id="noImage">No scan available</p>
           </div>
 
+          <!-- ASSESSMENT DATA -->
+          <div id="assessmentSection" style="display:none; margin-top: 20px;">
+            <h3>Wound Assessment</h3>
+            <table id="assessmentTable" class="assessment-table"></table>
+          </div>
+
           <!-- BUTTON -->
-          <button id="printBtn" class="action-btn print-btn">Print Scan</button>
+          <button id="printBtn" class="action-btn print-btn">Print Report</button>
         </div>
       </div>
     </div>

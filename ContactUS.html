@@ -1,30 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Metadata -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Form</title>
+  <title>Contact – Surgic Sense</title>
 
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
-
-  <!-- Icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-  <!-- Libraries -->
-  <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-  <!-- Your script -->
   <script src="script.js" defer></script>
 </head>
 
 <body>
-  <!-- Top header -->
+
   <header class="top-header">
     <div class="header-left">
       <img src="Images/download.png" alt="Logo">
@@ -32,7 +24,6 @@
     </div>
   </header>
 
-  <!-- Navigation -->
   <nav class="compact-nav">
     <ul>
       <li><a href="index.html"><ion-icon name="home-outline"></ion-icon><span>Home</span></a></li>
@@ -41,10 +32,10 @@
       <li><a href="demo.html"><ion-icon name="play-circle-outline"></ion-icon><span>Demo</span></a></li>
       <li><a href="https://healthview.uni-mainz.de/segmentation-3d-prediction/" target="_blank"><ion-icon name="sparkles-outline"></ion-icon><span>3D Prediction</span></a></li>
       <li><a href="ContactUS.html"><ion-icon name="mail-outline"></ion-icon><span>Contact</span></a></li>
+      <li><a href="login.html"><ion-icon name="medkit-outline"></ion-icon><span>Log in for Surgeons</span></a></li>
     </ul>
   </nav>
 
-  <!-- Active navigation highlight based on file name -->
   <script>
     const currentPage = location.pathname.split("/").pop();
     document.querySelectorAll('.compact-nav a').forEach(link => {
@@ -54,77 +45,62 @@
     });
   </script>
 
-  <!-- Your contact form and page content should go here -->
-
-</body>
-</html>
-
-
-    <!-- Main content area with contact form -->
+  <main>
     <div class="hero">
-        <!-- Contact form with name, email, and message -->
-        <form id="contactForm">
-            <!-- Name input -->
-            <div class="input-group">
-                <input type="text" id="name" name="name" required>
-                <label for="name"><i class="fas fa-user"></i> Your name</label>
-            </div>
+      <form id="contactForm">
+        <div class="input-group">
+          <input type="text" id="name" name="name" required>
+          <label for="name"><i class="fas fa-user"></i> Your name</label>
+        </div>
 
-            <!-- Email input -->
-            <div class="input-group">
-                <input type="email" id="email" name="email" required>
-                <label for="email"><i class="fas fa-envelope"></i> Your e-mail</label>
-            </div>
+        <div class="input-group">
+          <input type="email" id="email" name="email" required>
+          <label for="email"><i class="fas fa-envelope"></i> Your e-mail</label>
+        </div>
 
-            <!-- Message textarea -->
-            <div class="input-group">
-                <textarea id="message" name="message" rows="8" required></textarea>
-                <label for="message"><i class="fas fa-comments"></i> Your message</label>
-            </div>
+        <div class="input-group">
+          <textarea id="message" name="message" rows="8" required></textarea>
+          <label for="message"><i class="fas fa-comments"></i> Your message</label>
+        </div>
 
-            <!-- Submit button -->
-            <button type="submit">SUBMIT <i class="fas fa-paper-plane"></i></button>
-        </form>
+        <button type="submit">SUBMIT <i class="fas fa-paper-plane"></i></button>
+      </form>
 
-        <!-- SweetAlert and fetch-based form submission -->
-        <script>
+      <script>
         document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault();  // Prevent page reload
+          event.preventDefault();
 
-            // Gather form data
-            let formData = new FormData(this);
+          let formData = new FormData(this);
 
-            // Submit form data to formsubmit.co using AJAX
-            fetch("https://formsubmit.co/ajax/hlane@uni-mainz.de", {
-                method: "POST",
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success === "true") {
-                    // Show success popup using SweetAlert2
-                    Swal.fire({
-                        icon: "success",
-                        title: "Message Sent!",
-                        text: "Your message has been sent successfully.",
-                        timer: 2000,
-                        showConfirmButton: false
-                    }).then(() => {
-                        // Redirect to homepage after popup
-                        window.location.href = "index.html";
-                    });
-                }
-            })
-            .catch(error => {
-                // Show error popup if request fails
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Something went wrong. Please try again!"
-                });
+          fetch("https://formsubmit.co/ajax/hlane@uni-mainz.de", {
+            method: "POST",
+            body: formData
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success === "true") {
+              Swal.fire({
+                icon: "success",
+                title: "Message Sent!",
+                text: "Your message has been sent successfully.",
+                timer: 2000,
+                showConfirmButton: false
+              }).then(() => {
+                window.location.href = "index.html";
+              });
+            }
+          })
+          .catch(error => {
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: "Something went wrong. Please try again!"
             });
+          });
         });
-        </script>
+      </script>
     </div>
+  </main>
+
 </body>
 </html>

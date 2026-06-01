@@ -3,91 +3,119 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Edit Profile</title>
-
+<title>Edit Profile – Surgic Sense</title>
 <link rel="stylesheet" href="styles.css">
-
 </head>
 
 <body class="simulator-body">
 
 <header class="top-header">
-
-<div class="header-left">
-<img src="images/logo.png" class="logo">
-<h3>Advancing Medicine with Technology & AI</h3>
-</div>
-
-<div class="doctor-info">
-Dr. John Doe | Plastic Surgeon
-</div>
-
+  <div class="header-left">
+    <img src="Images/logo.png" alt="Logo">
+    <h1>Advancing Medicine with Technology & AI</h1>
+  </div>
+  <div class="doctor-info" id="headerDoctorInfo"></div>
 </header>
 
-
 <div class="simulator-wrapper">
-
 <div class="simulator-container">
 
+  <!-- LEFT MENU -->
+  <div class="menu-panel">
+    <a href="upload-scan.html" class="menu-btn">Upload Scan</a>
+    <a href="segment.html" class="menu-btn">Segment</a>
+    <a href="view.html" class="menu-btn">View</a>
+    <a href="assess-wound.html" class="menu-btn">Assess Wound</a>
+    <a href="print.html" class="menu-btn">Print</a>
+    <a href="edit-profile.html" class="menu-btn active">Edit Profile</a>
+    <a href="#" id="saveBtn" class="menu-btn">Save</a>
+    <a href="index.html" class="menu-btn logout">Log Out</a>
+  </div>
 
-<!-- LEFT MENU -->
+  <!-- RIGHT PANEL -->
+  <div class="display-panel">
+    <h2 class="page-title">Edit Profile</h2>
 
-<div class="menu-panel">
+    <form class="profile-form" onsubmit="return false;">
 
-<a href="upload-scan.html" class="menu-btn">Upload Scan</a>
+      <label>Username</label>
+      <input type="text" id="username">
 
-<a href="segment.html" class="menu-btn">Segment</a>
+      <label>New Password</label>
+      <input type="password" id="password" placeholder="Leave blank to keep current">
 
-<a href="edit-profile.html" class="menu-btn active">Edit Profile</a>
+      <label>Full Name</label>
+      <input type="text" id="fullName">
 
-<a href="view.html" class="menu-btn">View</a>
+      <label>Specialty</label>
+      <input type="text" id="specialty">
 
+      <label>Hospital</label>
+      <input type="text" id="hospital">
 
+      <label>Years of Experience</label>
+      <input type="number" id="experience" min="0">
 
-<a href="assess-wound.html" class="menu-btn">Assess Wound</a>
-<a href="print.html" class="menu-btn">Print</a>
-<a href="#" id="saveBtn" class="menu-btn">Save</a>
+      <button type="button" class="update-btn" onclick="saveProfile()">Update Profile</button>
+      <p id="profileMsg" style="color: green; margin-top: 8px; display: none;">Profile updated successfully.</p>
 
-<a href="index.html" class="menu-btn logout">Log Out</a>
-
-</div>
-
-
-<!-- RIGHT PANEL -->
-
-<div class="display-panel">
-
-<h2 class="page-title">Edit Profile</h2>
-
-<form class="profile-form">
-
-<label>Username</label>
-<input type="text" value="doctor">
-
-<label>Password</label>
-<input type="password" value="1234">
-
-<label>Full Name</label>
-<input type="text" value="Dr. John Doe">
-
-<label>Specialty</label>
-<input type="text" value="Plastic Surgeon">
-
-<label>Hospital</label>
-<input type="text" value="University Hospital">
-
-<label>Years of Experience</label>
-<input type="number" value="10">
-
-<button class="update-btn">Update Profile</button>
-
-</form>
+    </form>
+  </div>
 
 </div>
-
 </div>
 
-</div>
+<script>
+const DEFAULTS = {
+  username: "doctor",
+  password: "1234",
+  fullName: "Dr. John Doe",
+  specialty: "Plastic Surgeon",
+  hospital: "University Hospital",
+  experience: "10"
+};
+
+function loadProfile() {
+  const saved = JSON.parse(localStorage.getItem("userProfile") || "null") || DEFAULTS;
+  document.getElementById("username").value = saved.username || DEFAULTS.username;
+  document.getElementById("fullName").value = saved.fullName || DEFAULTS.fullName;
+  document.getElementById("specialty").value = saved.specialty || DEFAULTS.specialty;
+  document.getElementById("hospital").value = saved.hospital || DEFAULTS.hospital;
+  document.getElementById("experience").value = saved.experience || DEFAULTS.experience;
+  document.getElementById("headerDoctorInfo").textContent =
+    (saved.fullName || DEFAULTS.fullName) + " | " + (saved.specialty || DEFAULTS.specialty);
+}
+
+function saveProfile() {
+  const current = JSON.parse(localStorage.getItem("userProfile") || "null") || DEFAULTS;
+  const newPassword = document.getElementById("password").value;
+
+  const updated = {
+    username: document.getElementById("username").value || current.username,
+    password: newPassword ? newPassword : current.password,
+    fullName: document.getElementById("fullName").value || current.fullName,
+    specialty: document.getElementById("specialty").value || current.specialty,
+    hospital: document.getElementById("hospital").value || current.hospital,
+    experience: document.getElementById("experience").value || current.experience,
+  };
+
+  localStorage.setItem("userProfile", JSON.stringify(updated));
+  document.getElementById("password").value = "";
+  document.getElementById("headerDoctorInfo").textContent =
+    updated.fullName + " | " + updated.specialty;
+
+  const msg = document.getElementById("profileMsg");
+  msg.style.display = "block";
+  setTimeout(() => { msg.style.display = "none"; }, 3000);
+}
+
+document.getElementById("saveBtn").addEventListener("click", function(e) {
+  e.preventDefault();
+  alert("Your work has been saved successfully.");
+});
+
+loadProfile();
+</script>
 
 </body>
 </html>

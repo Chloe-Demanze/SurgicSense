@@ -3,19 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Soft Tissue Reconstruction Demo</title>
+  <title>Information – Surgic Sense</title>
 
-  <!-- Styles & Scripts -->
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 
-  <!-- Ionicons -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
 
-  <!-- Top header -->
   <header class="top-header">
     <div class="header-left">
       <img src="Images/download.png" alt="Logo">
@@ -23,7 +20,6 @@
     </div>
   </header>
 
-  <!-- Navigation -->
   <nav class="compact-nav">
     <ul>
       <li><a href="index.html"><ion-icon name="home-outline"></ion-icon><span>Home</span></a></li>
@@ -32,10 +28,10 @@
       <li><a href="demo.html"><ion-icon name="play-circle-outline"></ion-icon><span>Demo</span></a></li>
       <li><a href="https://healthview.uni-mainz.de/segmentation-3d-prediction/" target="_blank"><ion-icon name="sparkles-outline"></ion-icon><span>3D Prediction</span></a></li>
       <li><a href="ContactUS.html"><ion-icon name="mail-outline"></ion-icon><span>Contact</span></a></li>
+      <li><a href="login.html"><ion-icon name="medkit-outline"></ion-icon><span>Log in for Surgeons</span></a></li>
     </ul>
   </nav>
 
-  <!-- Active nav highlighting -->
   <script>
     const currentPage = location.pathname.split("/").pop();
     document.querySelectorAll('.compact-nav a').forEach(link => {
@@ -45,59 +41,50 @@
     });
   </script>
 
-  <!-- Page-specific content goes here -->
+  <main>
 
-</body>
-</html>
+    <section>
+      <h2>Transforming Healthcare with Technology and AI: A Continuous Era in Medicine</h2>
+    </section>
 
+    <section>
+      <h3 style="clear: right;">The role of 3D imaging</h3>
+      <img src="Images/3D.jpg" alt="3D" class="right">
+      <p>
+        3D imaging is redefining healthcare by enabling surgeons to create precise anatomical models...
+        <li>Chronic Wound Care: Tracks healing, assesses risks, and personalizes treatments like skin grafting.</li><br>
+        <li>Preoperative Planning: Simulates surgical outcomes, ensuring accuracy and minimizing risks.</li><br>
+        <li>3D Printing: Produces patient-specific implants and prosthetics for enhanced functionality and aesthetics.</li><br>
+        <li>Surgical Simulation: Prepares surgeons for complex procedures, reducing complications.</li><br>
+        This technology is a cornerstone of modern medicine, ensuring better precision, safety, and outcomes.
+      </p>
+    </section>
 
-    <!-- Main content of the page -->
-    <main>
+    <section>
+      <h3 style="clear: right;">A Closer Look at Thermal Imaging</h3>
+      <img src="Images/Thermal.jpg" alt="Thermal image" class="right">
+      <p>
+        Thermal imaging detects temperature variations in tissue...
+        <li>Wound Healing Monitoring: Detects abnormal temperature patterns...</li><br>
+        <li>Wound Assessment: Beneficial for chronic wounds...</li><br>
+        <li>Surgical Planning and Monitoring: Assesses blood flow...</li><br>
+      </p>
+    </section>
 
-        <!-- Intro section -->
-        <section>
-            <h2>Transforming Healthcare with Technology and AI: A Continuous Era in Medicine</h2>
-        </section>
+    <section>
+      <h3 style="clear: right;">A Complete Picture: Merging 3D & Thermal imaging</h3>
+      <div>
+        <img src="Images/3D&Thermal.jpg" alt="3D & Thermal image" class="right">
+        <p>
+          We want to create a tool that integrates 3D imaging and thermal imaging with AI...
+          <li>Model Wound Closures: Use 3D imaging to visualize how a wound might close over time...</li><br>
+          <li>Assess Limb Functionality: Analyze 3D scans of soft tissues and joints...</li><br>
+          <li>Overlay Thermal Imaging and Ultrasound Data: Combine thermal, 3D, and ultrasound info...</li><br><br>
+        </p>
+      </div>
+    </section>
 
-        <!-- Section about 3D imaging -->
-        <section>
-            <h3 style="clear: right;">The role of 3D imaging</h3>
-            <img src="Images/3D.jpg" alt="3D" class="right">
-            <p>
-                3D imaging is redefining healthcare by enabling surgeons to create precise anatomical models...
-                <li>Chronic Wound Care: Tracks healing, assesses risks, and personalizes treatments like skin grafting.</li><br>
-                <li>Preoperative Planning: Simulates surgical outcomes, ensuring accuracy and minimizing risks.</li><br>
-                <li>3D Printing: Produces patient-specific implants and prosthetics for enhanced functionality and aesthetics.</li><br>
-                <li>Surgical Simulation: Prepares surgeons for complex procedures, reducing complications.</li><br>
-                This technology is a cornerstone of modern medicine, ensuring better precision, safety, and outcomes.
-            </p>
-        </section>
+  </main>
 
-        <!-- Section about thermal imaging -->
-        <section>
-            <h3 style="clear: right;">A Closer Look at Thermal Imaging</h3>
-            <img src="Images/Thermal.jpg" alt="Thermal image" class="right">
-            <p>
-                Thermal imaging detects temperature variations in tissue...
-                <li>Wound Healing Monitoring: Detects abnormal temperature patterns...</li><br>
-                <li>Wound Assessment: Beneficial for chronic wounds...</li><br>
-                <li>Surgical Planning and Monitoring: Assesses blood flow...</li><br>
-            </p>
-        </section>
-
-        <!-- Section combining 3D and thermal imaging -->
-        <section>
-            <h3 style="clear: right;">A Complete Picture: Merging 3D & Thermal imaging</h3>
-            <div>
-                <img src="Images/3D&Thermal.jpg" alt="3D & Thermal image" class="right">
-                <p>
-                    We want to create a tool that integrates 3D imaging and thermal imaging with AI...
-                    <li>Model Wound Closures: Use 3D imaging to visualize how a wound might close over time...</li><br>
-                    <li>Assess Limb Functionality: Analyze 3D scans of soft tissues and joints...</li><br>
-                    <li>Overlay Thermal Imaging and Ultrasound Data: Combine thermal, 3D, and ultrasound info...</li><br><br>
-                </p>
-            </div>
-        </section>
-    </main>
 </body>
 </html>

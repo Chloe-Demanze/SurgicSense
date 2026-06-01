@@ -13,15 +13,28 @@ document.addEventListener("DOMContentLoaded", () => {
   let translateY = 0;
 
   const model = localStorage.getItem("lastModelName");
+  const lastResult = localStorage.getItem("lastResult");
 
-  if (!model) {
+  if (!model && !lastResult) {
     viewer.innerHTML = "<p>No scan loaded</p>";
     return;
   }
 
-  loadImage(model);
+  if (lastResult) {
+    showImage(lastResult);
+  } else {
+    loadPreview(model);
+  }
 
-  async function loadImage(model) {
+  function showImage(src) {
+    viewer.innerHTML = "";
+    img = document.createElement("img");
+    img.src = src;
+    viewer.appendChild(img);
+    updateTransform();
+  }
+
+  async function loadPreview(model) {
     try {
       const formData = new FormData();
       formData.append("model_name", model);
@@ -34,15 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!res.ok) throw new Error();
 
       const data = await res.json();
-
-      viewer.innerHTML = "";
-
-      img = document.createElement("img");
-      img.src = `${API_BASE}${data.texture_url}`;
-
-      viewer.appendChild(img);
-
-      updateTransform();
+      showImage(`${API_BASE}${data.texture_url}`);
     } catch {
       viewer.innerHTML = "<p>Failed to load image</p>";
     }

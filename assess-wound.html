@@ -25,12 +25,10 @@
 
 <a href="upload-scan.html" class="menu-btn">Upload Scan</a>
 <a href="segment.html" class="menu-btn">Segment</a>
-<a href="edit-profile.html" class="menu-btn">Edit Profile</a>
 <a href="view.html" class="menu-btn">View</a>
-
 <a href="assess-wound.html" class="menu-btn active">Assess Wound</a>
 <a href="print.html" class="menu-btn">Print</a>
-
+<a href="edit-profile.html" class="menu-btn">Edit Profile</a>
 <a href="#" id="saveBtn" class="menu-btn">Save</a>
 <a href="#" id="logoutBtn" class="menu-btn logout">Log Out</a>
 
@@ -138,8 +136,11 @@ document.getElementById("saveAssessment").onclick = function(){
 let caseData = JSON.parse(localStorage.getItem("currentCase"));
 
 if(!caseData){
-alert("No scan found. Please upload and segment first.");
-return;
+  caseData = {
+    modelName: localStorage.getItem("lastModelName") || "",
+    resultUrl: localStorage.getItem("lastResult") || "",
+    assessment: null
+  };
 }
 
 // SPARA ALL DATA
