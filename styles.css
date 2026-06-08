@@ -304,10 +304,7 @@ ul li {
 .hero {
   width: 100%;
   height: 100vh;
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.7), #c5cce1), url(Images/contact.jpg);
-  background-position: center;
-  background-size: cover;
+  background: rgba(193, 0, 42, 0.95);
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -324,12 +321,13 @@ form {
 input,
 textarea {
   width: 100%;
-  padding: 10px;
+  padding: 10px 16px;
   outline: 0;
-  border: 1px solid #fff;
-  color: #fff;
-  background: transparent;
+  border: none;
+  color: #000;
+  background: #fff;
   font-size: 15px;
+  border-radius: 20px;
 }
 .item.error {
   border: 1px solid red;
@@ -340,7 +338,7 @@ textarea {
   left: 0;
   top: 0;
   padding: 10px;
-  color: #fff;
+  color: #000;
   cursor: text;
   transition: 0.2s;
 }

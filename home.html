@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soft Tissue Reconstruction Demo</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Icons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- POPUP START -->
+<div id="ng-overlay">
+  <div class="ng-modal">
+
+    <h1 class="ng-title">Welcome to <span>Surgic Sense</span></h1>
+
+    <p class="ng-body">
+      This tool allows surgeons to upload and analyze wound images using AI.
+      It is intended for demonstration purposes only.
+    </p>
+
+    <hr class="ng-divider"/>
+
+    <p class="ng-body">
+      <span class="ng-label">Disclaimer:</span>
+      This application is for educational purposes only and not for real medical use.
+    </p>
+
+    <hr class="ng-divider"/>
+
+    <div class="ng-checkbox-row">
+      <input type="checkbox" id="ng-agree" />
+      <label for="ng-agree">I have read and understood</label>
+    </div>
+
+    <button class="ng-btn" id="ng-confirm-btn">
+      I Understand
+    </button>
+
+  </div>
+</div>
+<!-- POPUP END -->
+
+  <!-- Header with logo and title -->
+  <header class="top-header">
+    <div class="header-left">
+      <img src="Images/logo.png" alt="Logo">
+      <h1>Advancing Medicine with Technology & AI</h1>
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav class="compact-nav">
+    <ul>
+      <li><a href="home.html"><ion-icon name="home-outline"></ion-icon><span>Home</span></a></li>
+      <li><a href="AboutUs.html"><ion-icon name="person-outline"></ion-icon><span>About Us</span></a></li>
+      <li><a href="information.html"><ion-icon name="information-circle-outline"></ion-icon><span>Information</span></a></li>
+      <li><a href="demo.html"><ion-icon name="play-circle-outline"></ion-icon><span>Demo</span></a></li>
+      <li><a href="ContactUS.html"><ion-icon name="mail-outline"></ion-icon><span>Contact</span></a></li>
+      <li><a href="login.html"><ion-icon name="medkit-outline"></ion-icon><span>Log in for Surgeons</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- Optional JS to mark active page -->
+  <script>
+    const current = location.pathname.split('/').pop();
+    const navLinks = document.querySelectorAll('.compact-nav li a');
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === current) {
+        link.parentElement.classList.add('active');
+      }
+    });
+  </script>
+
+    <!-- Main content of the page -->
+    <main>
+
+        <!-- Section: Role of imaging -->
+        <section>
+            <h2>Mobile Wound Assessment for reconstructive surgery</h2>
+            <div class="clearfix">
+                <!-- Image of battlefield trauma -->
+                <img class="img1" src="Images/bild 4.jpg" alt="Graphic illustrating gunshot wounds in conflict zones" width="190px" height="190px">
+
+                <!-- Explanation of 3D and thermal imaging in diagnostics -->
+                <p>
+                    Mobile wound assessment for reconstructive surgery brings expert-level evaluation directly to the patient, making care faster,
+                    more precise, and far more accessible. Using secure smartphone imaging and advanced analysis tools, 
+                    clinicians can remotely monitor healing progress, assess tissue viability, 
+                    and identify early signs of complications without requiring an in‑person visit. 
+                    This approach supports timely decision‑making, improves continuity of care, 
+                    and helps surgical teams tailor interventions to each patient’s unique recovery trajectory. 
+                    By combining convenience with clinical rigor, 
+                    mobile wound assessment enhances outcomes and strengthens the connection between patients and their reconstructive surgery team.
+
+                </p>
+            </div>
+        </section>
+
+        <!-- Section: War context and integration needs -->
+        <section class="pic">
+            <div class="content">
+                <h2 style="clear: right;">Segmentation and Classification</h2>
+
+                <!-- Text about war injuries and need for tech integration -->
+                <p>
+                Gunshot wounds are a major issue in war zones, with many needing reconstructive surgery.  
+                We aim to combine 3D scanning, thermal imaging, and ultrasound into one AI-powered tool to:
+                </p>
+
+
+                <!-- List of integrated tools -->
+                <ul>
+                <li>Model wound closure</li>
+                <li>Analyze blood flow and tissue health</li>
+                <li>Improve planning for reconstruction</li>
+                </ul>
+
+                <p>This solution will help model wound closure and evaluate limb functionality, paving the way for improved plastic surgery outcomes.</p>
+            </div>
+
+            <!-- Three rotating images of injuries or medical content -->
+            <div class="images">
+                <img id="images-image-1" src="Images/bild 1.jpg" alt="images Image 1" class="active">
+                <img id="images-image-2" src="Images/bild 2.jpg" alt="images Image 2">
+                <img id="images-image-3" src="Images/bild 3.jpg" alt="images Image 3">
+            </div>
+        </section>
+
+        <!-- Section: Interactive puzzle game -->
+        <section class="game-container">
+            <div class="game-left">
+                <h2>Interactive Puzzle Demo</h2>
+                <h3>Rebuild the wound image by rearranging the tiles. This mimics how image data can be restructured by AI.</h3>
+
+                <br>
+
+                <!-- Game area rendered by JavaScript -->
+                <div id="game"></div>
+
+                <!-- Turns counter -->
+                <h1>Turns:<span id="turns">0</span></h1>
+            </div>
+
+            <!-- Target image for the puzzle -->
+            <div class="game-right">
+                <img src="Images/bild 7.jpg" alt="Target Image">
+            </div>
+        </section>
+
+        <!-- Section: Broader application -->
+        <section>
+            <h2>Beyond Trauma Care</h2>
+            <p>
+            This technology can also assist in breast reconstruction after mastectomy by modeling tissue and guiding surgical planning.
+            </p>
+        </section>
+    </main>
+</body>
+</html>
